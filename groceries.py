@@ -1,6 +1,6 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
 
 def to_usd(my_price):
     """
@@ -37,6 +37,9 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+#
+# products code
+
 print("----------------")
 print("THERE ARE",len(products),"PRODUCTS")
 print("----------------")
@@ -52,5 +55,24 @@ for p in sorted_products:
     print("+ ", p["name"],"(",to_usd(p["price"]),")")
 
 
+#departments code
+departments = []
+for i in products:
+    if i["department"] not in departments:
+        departments.append(i["department"])
 
-# TODO: write some Python code here to produce the desired output
+# print(departments)
+dept_count = len(departments)
+#departments = sorted(departments)
+sorted_departments = departments.sort()
+print("----------------")
+print("THERE ARE " + str(dept_count) + " PRODUCTS")
+print("----------------")    
+
+# print([i["department"] for i in departments])
+
+for dept_name in departments:
+    matching_products = [i for i in products if i["department"] == dept_name]
+    matching_products_count = len(matching_products)
+ #   print(f"{dept_name.title()}" ({matching_products_count}) products")
+    print(dept_name.title())
