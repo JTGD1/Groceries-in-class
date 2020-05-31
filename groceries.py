@@ -75,4 +75,5 @@ for dept_name in departments:
     matching_products = [i for i in products if i["department"] == dept_name]
     matching_products_count = len(matching_products)
  #   print(f"{dept_name.title()}" ({matching_products_count}) products")
-    print(dept_name.title())
+ #   print(dept_name + str(matching_products_count) " products")
+    print(dept_name.title(), "--", matching_products_count, "product(s)")
