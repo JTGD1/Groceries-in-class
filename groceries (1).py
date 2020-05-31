@@ -43,13 +43,10 @@ print("----------------")
 
 # print(products[0])
 
-def sort_by_name(p):
-    return p["name"]
-sorted_products = sorted(products, key=sort_by_name)
-
-for p in sorted_products:
+for p in products:
  #   print(type(p))
-    print("+ ", p["name"],"(",to_usd(p["price"]),")")
+    print(" + " + p["name"], + "(", + to_usd(p["price"]), + ")")
+
 
 
 
