@@ -2,6 +2,18 @@
 
 #from pprint import pprint
 
+def to_usd(my_price):
+    """
+    Converts a numeric value to usd-formatted string, for printing and display purposes.
+    
+    Param: my_price (int or float) like 4000.444444
+    
+    Example: to_usd(4000.444444)
+    
+    Returns: $4,000.44
+    """
+    return f"${my_price:,.2f}" #> $12,000.71
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -25,8 +37,17 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+print("----------------")
+print("THERE ARE",len(products),"PRODUCTS")
+print("----------------")
 
-for i in products:
-   print(i)
+# print(products[0])
+
+for p in products:
+ #   print(type(p))
+    print(p["name"],"(",to_usd(p["price"]),")")
+
+
+
 
 # TODO: write some Python code here to produce the desired output
